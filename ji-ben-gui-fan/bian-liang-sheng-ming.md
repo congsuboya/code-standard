@@ -102,16 +102,6 @@
     itemsCopy = items.slice();
     ```
 
-  - 使用 Array#slice 将类数组对象转换成数组。
-
-    ```javascript
-    function trigger() {
-      var args = Array.prototype.slice.call(arguments);
-      ...
-    }
-    ```
-
-
 
 ## <a name="strings">字符串</a>
 
@@ -119,80 +109,35 @@
 
     ```javascript
     // bad
-    var name = "Bob Parr";
+    let name = "Bob Parr";
 
     // good
-    var name = 'Bob Parr';
+    let name = 'Bob Parr';
 
     // bad
-    var fullName = "Bob " + this.lastName;
+    let fullName = "Bob " + this.lastName;
 
     // good
-    var fullName = 'Bob ' + this.lastName;
+    let fullName = 'Bob ' + this.lastName;
     ```
 
-  - 超过 100 个字符的字符串应该使用连接符写成多行。
-  - 注：若过度使用，通过连接符连接的长字符串可能会影响性能。[jsPerf](http://jsperf.com/ya-string-concat) & [讨论](https://github.com/airbnb/javascript/issues/40).
+  - 超过100个字符的字符串应该使用连接符写成多行。
+  - 注：若过度使用，通过连接符连接的长字符串可能会影响性能。
 
     ```javascript
     // bad
-    var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+    let errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
 
     // bad
-    var errorMessage = 'This is a super long error that was thrown because \
+    let errorMessage = 'This is a super long error that was thrown because \
     of Batman. When you stop to think about how Batman had anything to do \
     with this, you would get nowhere \
     fast.';
 
     // good
-    var errorMessage = 'This is a super long error that was thrown because ' +
+    let errorMessage = 'This is a super long error that was thrown because ' +
       'of Batman. When you stop to think about how Batman had anything to do ' +
       'with this, you would get nowhere fast.';
-    ```
-
-  - 程序化生成的字符串使用 Array#join 连接而不是使用连接符。尤其是 IE 下：[jsPerf](http://jsperf.com/string-vs-array-concat/2).
-
-    ```javascript
-    var items;
-    var messages;
-    var length;
-    var i;
-
-    messages = [{
-      state: 'success',
-      message: 'This one worked.'
-    }, {
-      state: 'success',
-      message: 'This one worked as well.'
-    }, {
-      state: 'error',
-      message: 'This one did not work.'
-    }];
-
-    length = messages.length;
-
-    // bad
-    function inbox(messages) {
-      items = '<ul>';
-
-      for (i = 0; i < length; i++) {
-        items += '<li>' + messages[i].message + '</li>';
-      }
-
-      return items + '</ul>';
-    }
-
-    // good
-    function inbox(messages) {
-      items = [];
-
-      for (i = 0; i < length; i++) {
-        // use direct assignment in this case because we're micro-optimizing.
-        items[i] = '<li>' + messages[i].message + '</li>';
-      }
-
-      return '<ul>' + items.join('') + '</ul>';
-    }
     ```
 
 
@@ -202,39 +147,15 @@
 
     ```javascript
     // 匿名函数表达式
-    var anonymous = function() {
+    let anonymous = function() {
       return true;
     };
 
     // 命名函数表达式
-    var named = function named() {
+     named() {
       return true;
     };
 
-    // 立即调用的函数表达式（IIFE）
-    (function () {
-      console.log('Welcome to the Internet. Please follow me.');
-    }());
-    ```
-
-  - 永远不要在一个非函数代码块（if、while 等）中声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但它们的解析表现不一致。
-  - **注：** ECMA-262 把 `块` 定义为一组语句。函数声明不是语句。[阅读对 ECMA-262 这个问题的说明](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97)。
-
-    ```javascript
-    // bad
-    if (currentUser) {
-      function test() {
-        console.log('Nope.');
-      }
-    }
-
-    // good
-    var test;
-    if (currentUser) {
-      test = function test() {
-        console.log('Yup.');
-      };
-    }
     ```
 
   - 永远不要把参数命名为 `arguments`。这将取代函数作用域内的 `arguments` 对象。
@@ -257,88 +178,78 @@
   - 使用 `.` 来访问对象的属性。
 
     ```javascript
-    var luke = {
+    let luke = {
       jedi: true,
       age: 28
     };
 
     // bad
-    var isJedi = luke['jedi'];
+    let isJedi = luke['jedi'];
 
     // good
-    var isJedi = luke.jedi;
+    let isJedi = luke.jedi;
     ```
 
   - 当通过变量访问属性时使用中括号 `[]`。
 
     ```javascript
-    var luke = {
-      jedi: true,
-      age: 28
+    //  let itemsData = json['data'][configData.uuid]['data'];
+    
+    let uuid = 9869
+    let result = {
+        data:{
+         9869 :{
+              ...
+              }
+          }
+        status: 0
     };
 
-    function getProp(prop) {
-      return luke[prop];
-    }
-
-    var isJedi = getProp('jedi');
+    let pageData = result.data[uuid];
     ```
 
 
 ## <a name="variables">变量</a>
 
-  - 总是使用 `var` 来声明变量。不这么做将导致产生全局变量。我们要避免污染全局命名空间。
+  - 类内部总是使用 `let` 来声明变量。外部如果是静态变量使用 `const` 来声明,并且基本数据类型的声明劲量用大写。
 
     ```javascript
     // bad
-    superPower = new SuperPower();
+    let windowHeight = 100
+    class Demo extends React.Component{
+      ...
+      const tempData = 123
+      ...
+    }
 
     // good
-    var superPower = new SuperPower();
-    ```
-
-  - 使用 `var` 声明每一个变量。
-    这样做的好处是增加新变量将变的更加容易，而且你永远不用再担心调换错 `;` 跟 `,`。
-
-    ```javascript
-    // bad
-    var items = getItems(),
-        goSportsTeam = true,
-        dragonball = 'z';
-
-    // bad
-    // （跟上面的代码比较一下，看看哪里错了）
-    var items = getItems(),
-        goSportsTeam = true;
-        dragonball = 'z';
-
-    // good
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball = 'z';
+    const WINDOW_HEIGHT = 100
+    class Demo extends React.Component{
+    ...
+    let tempData = 123
+    ...
+    }
     ```
 
   - 最后再声明未赋值的变量。当你需要引用前面的变量赋值时这将变的很有用。
 
     ```javascript
     // bad
-    var i, len, dragonball,
+    let i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
     // bad
-    var i;
-    var items = getItems();
-    var dragonball;
-    var goSportsTeam = true;
-    var len;
+    let i;
+    let items = getItems();
+    let dragonball;
+    let goSportsTeam = true;
+    let len;
 
     // good
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball;
-    var length;
-    var i;
+    let items = getItems();
+    let goSportsTeam = true;
+    let dragonball,length,i;
     ```
 
   - 在作用域顶部声明变量。这将帮你避免变量声明提升相关的问题。
@@ -351,7 +262,7 @@
 
       //..other stuff..
 
-      var name = getName();
+      let name = getName();
 
       if (name === 'test') {
         return false;
@@ -362,7 +273,7 @@
 
     // good
     function () {
-      var name = getName();
+      let name = getName();
 
       test();
       console.log('doing stuff..');
@@ -378,7 +289,7 @@
 
     // bad - 不必要的函数调用
     function () {
-      var name = getName();
+      let name = getName();
 
       if (!arguments.length) {
         return false;
@@ -391,8 +302,7 @@
 
     // good
     function () {
-      var name;
-
+      let name;
       if (!arguments.length) {
         return false;
       }
