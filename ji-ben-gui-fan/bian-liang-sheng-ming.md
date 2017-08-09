@@ -9,8 +9,8 @@
     + `undefined`
 
     ```javascript
-    var foo = 1;
-    var bar = foo;
+    let foo = 1;
+    let bar = foo;
 
     bar = 9;
 
@@ -23,8 +23,8 @@
     + `function`
 
     ```javascript
-    var foo = [1, 2];
-    var bar = foo;
+    let foo = [1, 2];
+    let bar = foo;
 
     bar[0] = 9;
 
