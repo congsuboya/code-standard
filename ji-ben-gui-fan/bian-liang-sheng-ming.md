@@ -38,26 +38,10 @@
 
     ```javascript
     // bad
-    var item = new Object();
+    let item = new Object();
 
     // good
-    var item = {};
-    ```
-
-  - 不要使用[保留字](http://es5.github.io/#x7.6.1)作为键名，它们在 IE8 下不工作。[更多信息](https://github.com/airbnb/javascript/issues/61)。
-
-    ```javascript
-    // bad
-    var superman = {
-      default: { clark: 'kent' },
-      private: true
-    };
-
-    // good
-    var superman = {
-      defaults: { clark: 'kent' },
-      hidden: true
-    };
+    let item = {};
     ```
 
   - 使用同义词替换需要使用的保留字。
@@ -85,17 +69,17 @@
 
     ```javascript
     // bad
-    var items = new Array();
+    let items = new Array();
 
     // good
-    var items = [];
+    let items = [];
     ```
 
   - 向数组增加元素时使用 Array#push 来替代直接赋值。
+  
 
     ```javascript
-    var someStack = [];
-
+    let someStack = [];
 
     // bad
     someStack[someStack.length] = 'abracadabra';
@@ -104,17 +88,15 @@
     someStack.push('abracadabra');
     ```
 
-  - 当你需要拷贝数组时，使用 Array#slice。[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - 当你需要拷贝数组时，使用 Array#slice。
 
     ```javascript
-    var len = items.length;
-    var itemsCopy = [];
-    var i;
+    let itemsCopy = [];
 
     // bad
-    for (i = 0; i < len; i++) {
-      itemsCopy[i] = items[i];
-    }
+    items.map((item,index)=>{
+      itemsCopy.push(item)
+    })
 
     // good
     itemsCopy = items.slice();
