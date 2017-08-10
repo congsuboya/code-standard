@@ -17,7 +17,7 @@
   1. [空白](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
   1. [逗号](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
   1. [分号](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
-  1. [类型转化](ji-ben-gui-fan/ji-ben-gui-fan-3-md.md)
+  1. [计算 & 类型转化](ji-ben-gui-fan/ji-ben-gui-fan-3-md.md)
   1. [命名规则](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
   1. [存取器](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
   1. [测试](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
