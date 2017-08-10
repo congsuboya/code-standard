@@ -1,4 +1,27 @@
 
+## <a name ="loop">遍历</a>
+   - 不要再使用for()这种遍历方式，转到使用map,some
+
+    ```javascript
+      //let data=[1,2,3,4,5,6]
+      //bad
+      for(let i=0;i<data.length;i++){
+        data[i]
+        ...
+      }
+      
+      //bad
+      for(let i = 0; i<data.length;i++){
+          if(data[i]==3){
+            ....
+            break
+          }
+      }
+    ```
+
+
+
+
 
 ## <a name="type-casting--coercion">类型转换</a>
 
