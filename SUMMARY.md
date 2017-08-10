@@ -1,6 +1,6 @@
 # Summary
 
-* [开发代码规范.md](README.md)
+* [RN开发手册.md](README.md)
   * [目录.md](mu-lu.md)
   * [基本规范.md](ji-ben-gui-fan.md)
     * [变量声明.md](ji-ben-gui-fan/bian-liang-sheng-ming.md)
