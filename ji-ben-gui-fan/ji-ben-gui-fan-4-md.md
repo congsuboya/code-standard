@@ -134,7 +134,6 @@
     var CheckBox = require('./CheckBox');
     ```
 
-**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="accessors">存取器</a>
@@ -188,7 +187,6 @@
     };
     ```
 
-**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="constructors">构造函数</a>
@@ -273,4 +271,3 @@
     };
     ```
 
-**[⬆ 回到顶部](#table-of-contents)**

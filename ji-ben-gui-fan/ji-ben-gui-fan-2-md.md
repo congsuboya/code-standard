@@ -184,7 +184,7 @@
 
 ## <a name="whitespace">空白</a>
 
-  - vscode 可以使用快捷键shift + Alt + f
+  - vscode 可以使用快捷键shift + Alt + f 进行格式化
 
   - 使用 2 个空格作为缩进。
 
@@ -312,13 +312,13 @@
         .updateCount();
 
     // bad
-    var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+    let leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
         .attr('width', (radius + margin) * 2).append('svg:g')
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
     // good
-    var leds = stage.selectAll('.led')
+    let leds = stage.selectAll('.led')
         .data(data)
       .enter().append('svg:svg')
         .classed('led', true)
@@ -345,7 +345,7 @@
     return baz;
 
     // bad
-    var obj = {
+    let obj = {
       foo: function () {
       },
       bar: function () {
@@ -354,7 +354,7 @@
     return obj;
 
     // good
-    var obj = {
+    let obj = {
       foo: function () {
       },
 
@@ -364,98 +364,5 @@
 
     return obj;
     ```
-
-
-## <a name="commas">逗号</a>
-
-  - 行首逗号: **不需要**。
-
-    ```javascript
-    // bad
-    var story = [
-        once
-      , upon
-      , aTime
-    ];
-
-    // good
-    var story = [
-      once,
-      upon,
-      aTime
-    ];
-
-    // bad
-    var hero = {
-        firstName: 'Bob'
-      , lastName: 'Parr'
-      , heroName: 'Mr. Incredible'
-      , superPower: 'strength'
-    };
-
-    // good
-    var hero = {
-      firstName: 'Bob',
-      lastName: 'Parr',
-      heroName: 'Mr. Incredible',
-      superPower: 'strength'
-    };
-    ```
-
-  - 额外的行末逗号：**不需要**。这样做会在 IE6/7 和 IE9 怪异模式下引起问题。同样，多余的逗号在某些 ES3 的实现里会增加数组的长度。在 ES5 中已经澄清了 ([source](http://es5.github.io/#D))：
-
-  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
-
-    ```javascript
-    // bad
-    var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn',
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman',
-    ];
-
-    // good
-    var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn'
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman'
-    ];
-    ```
-
-
-## <a name="semicolons">分号</a>
-
-  - **使用分号。**
-
-    ```javascript
-    // bad
-    (function () {
-      var name = 'Skywalker'
-      return name
-    })()
-
-    // good
-    (function () {
-      var name = 'Skywalker';
-      return name;
-    })();
-
-    // good (防止函数在两个 IIFE 合并时被当成一个参数
-    ;(function () {
-      var name = 'Skywalker';
-      return name;
-    })();
-    ```
-
-    [了解更多](http://stackoverflow.com/a/7365214/1712802).
-
 
 
