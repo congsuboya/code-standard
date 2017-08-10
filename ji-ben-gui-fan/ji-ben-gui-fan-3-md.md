@@ -89,7 +89,6 @@
 
     [了解更多](http://stackoverflow.com/a/7365214/1712802).
 
-**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="type-casting--coercion">类型转换</a>
