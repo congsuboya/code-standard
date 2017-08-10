@@ -16,13 +16,14 @@
   1. [注释](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
   1. [空白](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
   1. [逗号](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
-  1. [分号](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md/#semicolons)
+  1. [分号](ji-ben-gui-fan/ji-ben-gui-fan-2-md.md)
   1. [类型转化](ji-ben-gui-fan/ji-ben-gui-fan-3-md.md)
-  1. [命名规则](#naming-conventions)
-  1. [存取器](#accessors)
-  1. [构造函数](#constructors)
-  1. [事件](#events)
-  1. [模块](#modules)
+  1. [命名规则](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
+  1. [存取器](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
+  1. [测试](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
+  1. [性能](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
+  1. [资源](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
+
 
 
 
