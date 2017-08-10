@@ -366,3 +366,91 @@
     ```
 
 
+## <a name="commas">逗号</a>
+
+  - 行首逗号: **不需要**。
+
+    ```javascript
+    // bad
+    let story = [
+        once
+      , upon
+      , aTime
+    ];
+
+    // good
+    let story = [
+      once,
+      upon,
+      aTime
+    ];
+
+    // bad
+    let hero = {
+        firstName: 'Bob'
+      , lastName: 'Parr'
+      , heroName: 'Mr. Incredible'
+      , superPower: 'strength'
+    };
+
+    // good
+    let hero = {
+      firstName: 'Bob',
+      lastName: 'Parr',
+      heroName: 'Mr. Incredible',
+      superPower: 'strength'
+    };
+    ```
+
+  - 额外的行末逗号：**不需要**。
+
+    ```javascript
+    // bad
+    let hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn',
+    };
+
+    let heroes = [
+      'Batman',
+      'Superman',
+    ];
+
+    // good
+    let hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn'
+    };
+
+    let heroes = [
+      'Batman',
+      'Superman'
+    ];
+    ```
+
+
+## <a name="semicolons">分号</a>
+
+  - **使用分号。**
+
+    ```javascript
+    // bad
+    (function () {
+      let name = 'Skywalker'
+      return name
+    })()
+
+    // good
+    (function () {
+      let name = 'Skywalker';
+      return name;
+    })();
+
+    // good (防止函数在两个 IIFE 合并时被当成一个参数
+    ;(function () {
+      var name = 'Skywalker';
+      return name;
+    })();
+    ```
+
+
