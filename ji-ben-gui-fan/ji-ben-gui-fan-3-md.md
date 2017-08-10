@@ -4,21 +4,21 @@
 
     ```javascript
     // bad
-    let story = [
+    var story = [
         once
       , upon
       , aTime
     ];
 
     // good
-    let story = [
+    var story = [
       once,
       upon,
       aTime
     ];
 
     // bad
-    let hero = {
+    var hero = {
         firstName: 'Bob'
       , lastName: 'Parr'
       , heroName: 'Mr. Incredible'
@@ -26,7 +26,7 @@
     };
 
     // good
-    let hero = {
+    var hero = {
       firstName: 'Bob',
       lastName: 'Parr',
       heroName: 'Mr. Incredible',
@@ -34,27 +34,29 @@
     };
     ```
 
-  - 额外的行末逗号：**不需要**。
+  - 额外的行末逗号：**不需要**。这样做会在 IE6/7 和 IE9 怪异模式下引起问题。同样，多余的逗号在某些 ES3 的实现里会增加数组的长度。在 ES5 中已经澄清了 ([source](http://es5.github.io/#D))：
+
+  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
 
     ```javascript
     // bad
-    let hero = {
+    var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn',
     };
 
-    let heroes = [
+    var heroes = [
       'Batman',
       'Superman',
     ];
 
     // good
-    let hero = {
+    var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn'
     };
 
-    let heroes = [
+    var heroes = [
       'Batman',
       'Superman'
     ];
@@ -68,13 +70,13 @@
     ```javascript
     // bad
     (function () {
-      let name = 'Skywalker'
+      var name = 'Skywalker'
       return name
     })()
 
     // good
     (function () {
-      let name = 'Skywalker';
+      var name = 'Skywalker';
       return name;
     })();
 
@@ -84,6 +86,10 @@
       return name;
     })();
     ```
+
+    [了解更多](http://stackoverflow.com/a/7365214/1712802).
+
+**[⬆ 回到顶部](#table-of-contents)**
 
 
 ## <a name="type-casting--coercion">类型转换</a>
@@ -95,43 +101,43 @@
     //  => this.reviewScore = 9;
 
     // bad
-    let totalScore = this.reviewScore + '';
+    var totalScore = this.reviewScore + '';
 
     // good
-    let totalScore = '' + this.reviewScore;
+    var totalScore = '' + this.reviewScore;
 
     // bad
-    let totalScore = '' + this.reviewScore + ' total score';
+    var totalScore = '' + this.reviewScore + ' total score';
 
     // good
-    let totalScore = this.reviewScore + ' total score';
+    var totalScore = this.reviewScore + ' total score';
     ```
 
   - 使用 `parseInt` 转换数字时总是带上类型转换的基数。
 
     ```javascript
-    let inputValue = '4';
+    var inputValue = '4';
 
     // bad
-    let val = new Number(inputValue);
+    var val = new Number(inputValue);
 
     // bad
-    let val = +inputValue;
+    var val = +inputValue;
 
     // bad
-    let val = inputValue >> 0;
+    var val = inputValue >> 0;
 
     // bad
-    let val = parseInt(inputValue);
+    var val = parseInt(inputValue);
 
     // good
-    let val = Number(inputValue);
+    var val = Number(inputValue);
 
     // good
-    let val = parseInt(inputValue, 10);
+    var val = parseInt(inputValue, 10);
     ```
 
-  - 如果因为某些原因 `parseInt` 成为你所做的事的瓶颈而需要使用位操作解决时，留个注释说清楚原因和你的目的。
+  - 如果因为某些原因 `parseInt` 成为你所做的事的瓶颈而需要使用位操作解决[性能问题](http://jsperf.com/coercion-vs-casting/3)时，留个注释说清楚原因和你的目的。
 
     ```javascript
     // good
@@ -140,10 +146,10 @@
      * Bitshifting the String to coerce it to a
      * Number made it a lot faster.
      */
-    let val = inputValue >> 0;
+    var val = inputValue >> 0;
     ```
 
-  - **注：** 小心使用位操作运算符。数字会被当成 [64 位值](http://es5.github.io/#x4.3.19)，但是位操作运算符总是返回 32 位的整数（[source](http://es5.github.io/#x11.7)）。位操作处理大于 32 位的整数值时还会导致意料之外的行为。最大的 32 位整数是 2,147,483,647：
+  - **注：** 小心使用位操作运算符。数字会被当成 [64 位值](http://es5.github.io/#x4.3.19)，但是位操作运算符总是返回 32 位的整数（[source](http://es5.github.io/#x11.7)）。位操作处理大于 32 位的整数值时还会导致意料之外的行为。[讨论](https://github.com/airbnb/javascript/issues/109)。最大的 32 位整数是 2,147,483,647：
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -154,14 +160,14 @@
   - 布尔:
 
     ```javascript
-    let age = 0;
+    var age = 0;
 
     // bad
-    let hasAge = new Boolean(age);
+    var hasAge = new Boolean(age);
 
     // good
-    let hasAge = Boolean(age);
+    var hasAge = Boolean(age);
 
     // good
-    let hasAge = !!age;
+    var hasAge = !!age;
     ```

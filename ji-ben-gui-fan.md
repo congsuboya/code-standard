@@ -1,6 +1,6 @@
-# Airbnb JavaScript Style Guide() {  
+# 销售易 React Native Style  
 
-*用更合理的方式写 JavaScript*
+*用更合理的方式写 React Native*
 
 ## <a name="table-of-contents">目录</a>
 
@@ -29,12 +29,6 @@
   1. [测试](#testing)
   1. [性能](#performance)
   1. [资源](#resources)
-  1. [谁在使用](#in-the-wild)
-  1. [翻译](#translation)
-  1. [JavaScript 风格指南说明](#the-javascript-style-guide-guide)
-  1. [与我们讨论 JavaScript](#chat-with-us-about-javascript)
-  1. [贡献者](#contributors)
-  1. [许可](#license)
 
 
 

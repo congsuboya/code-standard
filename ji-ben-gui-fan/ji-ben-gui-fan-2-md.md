@@ -184,7 +184,7 @@
 
 ## <a name="whitespace">空白</a>
 
-  - vscode 可以使用快捷键shift + Alt + f 进行格式化
+  - vscode 可以使用快捷键shift + Alt + f
 
   - 使用 2 个空格作为缩进。
 
@@ -312,13 +312,13 @@
         .updateCount();
 
     // bad
-    let leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+    var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
         .attr('width', (radius + margin) * 2).append('svg:g')
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
     // good
-    let leds = stage.selectAll('.led')
+    var leds = stage.selectAll('.led')
         .data(data)
       .enter().append('svg:svg')
         .classed('led', true)
@@ -345,7 +345,7 @@
     return baz;
 
     // bad
-    let obj = {
+    var obj = {
       foo: function () {
       },
       bar: function () {
@@ -354,7 +354,7 @@
     return obj;
 
     // good
-    let obj = {
+    var obj = {
       foo: function () {
       },
 
