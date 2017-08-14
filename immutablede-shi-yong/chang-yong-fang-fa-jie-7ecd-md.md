@@ -1,4 +1,4 @@
-## <a name="types">常用对象</a>
+## <a name="object">常用对象</a>
 
   - **List**: 对应于js中的列表，数组。
   
@@ -33,7 +33,7 @@
      
     ```
 
-## <a name="types">常用方法</a>
+## <a name="functions">常用方法</a>
 
 
   - **fromJS()**:把一个Object转换为immutable对象
