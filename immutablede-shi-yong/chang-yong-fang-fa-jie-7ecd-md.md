@@ -33,7 +33,7 @@
      
     ```
 
-## <a name="types">List常用方法</a>
+## <a name="types">常用方法</a>
 
  - **List.isList()**:判断一个对象是否是immutable 类型的List
  
@@ -43,7 +43,8 @@
     List.isList(List()); // true     
     ```
 
-- **set()**:给List对象赋值
+- **set()**:给对象赋值
+- List和Map 通用
 
   例子
   ```javascript
@@ -61,7 +62,8 @@
   ```
   
   
-  - **setIn()**:给List对象内部对象的value赋值
+  - **setIn()**:给对象内部对象的value赋值
+  - List和Map 通用
 
   例子
   ```javascript
@@ -72,7 +74,8 @@
   ```
   
   
-  - **update()**:更新List对象的值，能拿到要更新的value
+  - **update()**:更新对象的值，能拿到要更新的value
+  - List和Map 通用
 
   例子
   ```javascript
@@ -88,7 +91,8 @@
   ```
   
   
-  - **updateIn()**:更新List对象某个key的对象内部的值，能拿到要更新的value
+  - **updateIn()**:更新对象某个key的对象内部的值，能拿到要更新的value
+  - List和Map 通用
 
   例子
   ```javascript
