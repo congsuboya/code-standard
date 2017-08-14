@@ -4,7 +4,7 @@
   
    + 创建一个List 对象。
 
-    ```javascript
+  ```javascript
     import { List }  from ('immutable');
     const emptyList = List()
       // List []
@@ -12,7 +12,7 @@
     const obList = [ 1, 2, 3, 4 ];
     const immutabelList = List(obList);
       
-    ```
+  ```
   - **Map**: 对应于js中的对象。
 
     + 创建一个Map 对象。
