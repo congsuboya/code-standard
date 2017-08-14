@@ -117,7 +117,6 @@ render(){
     toNativePage(){
         let data = this.props.state.getIn(['instances',this.props.componentID,'data']);
         XSYCustomEntityModule.pushWithData(data.toJS())
-        
     }
 ```
 
