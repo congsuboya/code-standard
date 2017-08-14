@@ -68,6 +68,7 @@
     ```
     
 - **isIndexed()**:判断immutable对象的是否是List类型
+
     例子
     ```javascript
     import {  Iterable, List, Map, Set } from 'immutable';
@@ -79,6 +80,7 @@
     ```
     
 - **isKeyed()**:判断immutable对象的是否是Map类型
+
     例子
     ```javascript
     import {  Iterable, List, Map, Set } from 'immutable';
@@ -87,8 +89,6 @@
     Iterable.isKeyed()(Map()); // true
     Iterable.isKeyed()(List()); // false
     ```
-
-
 
  - **List.isList()**:判断一个对象是否是immutable 类型的List
  
@@ -102,63 +102,73 @@
 - List和Map 通用
 
   例子
-  ```javascript
-  const originalList = List([ 0 ]);
-  // List [ 0 ]
-  originalList.set(1, 1);
-  // List [ 0, 1 ]
-  originalList.set(0, 'overwritten');
-  // List [ "overwritten" ]
-  originalList.set(2, 2);
-  // List [ 0, undefined, 2 ]
-  
-  List().set(50000, 'value').size;
-  // 50001
-  ```
+    ```javascript
+    const originalList = List([ 0 ]);
+    // List [ 0 ]
+    originalList.set(1, 1);
+    // List [ 0, 1 ]
+    originalList.set(0, 'overwritten');
+    // List [ "overwritten" ]
+    originalList.set(2, 2);
+    // List [ 0, undefined, 2 ]
+    
+    List().set(50000, 'value').size;
+    // 50001
+    ```
   
   
   - **setIn()**:给对象内部对象的value赋值
   - List和Map 通用
 
   例子
-  ```javascript
-  import { List }  from ('immutable');
-  const list = List([ 0, 1, 2, List([ 3, 4 ])])
-  list.setIn([3, 0], 999);
-  // List [ 0, 1, 2, List [ 999, 4 ] ]
-  ```
+    ```javascript
+      import { List }  from ('immutable');
+      const list = List([ 0, 1, 2, List([ 3, 4 ])])
+      list.setIn([3, 0], 999);
+      // List [ 0, 1, 2, List [ 999, 4 ] ]
+    ```
   
   
   - **update()**:更新对象的值，能拿到要更新的value
   - List和Map 通用
 
   例子
-  ```javascript
-  const originalList = List([ 0 ]);
-  // List [ 0 ]
-  originalList.updata(1,v => 1);
-  // List [ 0, 1 ]
-  originalList.updata(0,v => 'overwritten');
-  // List [ "overwritten" ]
-  originalList.updata(2,v => 2);
-  // List [ 0, undefined, 2 ]
-  
-  ```
+    ```javascript
+      const originalList = List([ 0 ]);
+      // List [ 0 ]
+      originalList.updata(1,v => 1);
+      // List [ 0, 1 ]
+      originalList.updata(0,v => 'overwritten');
+      // List [ "overwritten" ]
+      originalList.updata(2,v => 2);
+      // List [ 0, undefined, 2 ]
+    ```
   
   
   - **updateIn()**:更新对象某个key的对象内部的值，能拿到要更新的value
   - List和Map 通用
 
   例子
-  ```javascript
-  import { List }  from ('immutable');
-  const list = List([ 0, 1, 2, List([ 3, 4 ])])
-  list.updateIn([3, 0],v => 999);
-  // List [ 0, 1, 2, List [ 999, 4 ] ]
-  ```
+    ```javascript
+      import { List }  from ('immutable');
+      const list = List([ 0, 1, 2, List([ 3, 4 ])])
+      list.updateIn([3, 0],v => 999);
+      // List [ 0, 1, 2, List [ 999, 4 ] ]
+    ```
 
-
-
+  - **withMutations()**:很重要的一个方法，当你需要改变List或者Map里面多个值得时候使用
+  - List和Map 通用
+  
+    例子
+      ```javascript
+        import { List, Map } from ('immutable');
+        const map1 = Map()
+        const map2 = map1.withMutations(map => {
+          map.set('a', 1).set('b', 2).set('c', 3)
+        })
+        assert(map1.size === 0)
+        assert(map2.size === 3)
+      ```
 
 
 
