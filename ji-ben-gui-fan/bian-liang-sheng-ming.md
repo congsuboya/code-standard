@@ -1,3 +1,7 @@
+
+*[类型](#types)*  *[对象](#objects)*  *[数组](#arrays)*  *[字符串](#strings)*  *[函数](#functions)* *[属性](#properties)* *[变量](#variables)* 
+
+
 ## <a name="types">类型</a>
 
   - **原始值**: 存取直接作用于它自身。
