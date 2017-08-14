@@ -113,5 +113,5 @@
     // good
     let hasAge = !!age;
     ```
-*[Top](#types)*
+*[Top](#loop)*
 *[返回上级](../ji-ben-gui-fan.md)*  
