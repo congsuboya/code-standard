@@ -5,7 +5,7 @@
 ### 3. [immutable的使用](immutablede-shi-yong.md)
 ### 4. [module开发流程](modulekai-fa-liu-7a0b-md.md)
 ### 5. [Jest 单元测试](jest-dan-yuan-ce-8bd5-md.md)
-### 6. [疑难解决]()
+### 6. [疑难解决](yi-nan-jie-51b3-md.md)
 
 
 
