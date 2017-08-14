@@ -160,5 +160,5 @@
     }
     ```
 
-*[Top](#types)*
+*[Top](#naming-conventions)*
 *[返回上级](../ji-ben-gui-fan.md)*  
