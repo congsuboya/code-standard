@@ -35,6 +35,47 @@
 
 ## <a name="types">常用方法</a>
 
+
+  - **fromJS()**:把一个Object转换为immutable对象
+    例子
+    ```javascript
+    import { fromJS, Iterable } from 'immutable';
+    
+    let config ={name:'111',age:18,courses:[1,2,3]}
+    let immutableOb = fromJS(config);
+    
+    Iterable.isImmutable(immutableOb) //true
+    Iterable.isKeyed(config) //false
+    Iterable.isKeyed(immutableOb) //true
+    Iterable.isKeyed(immutableOb.get('courser')) //false
+    Iterable.isCollection(immutableOb.get('courser')) //true   
+    
+    ```
+    
+    
+  - **is()**:判断两个immutable对象的值是否相等
+    
+    例子
+    ```javascript
+    import { fromJS, Iterable, Map } from 'immutable';
+    const map1 = Map({ a: 1, b: 1, c: 1 })
+    const map2 = Map({ a: 1, b: 1, c: 1 })
+    assert(map1 !== map2)
+    assert(Object.is(map1, map2) === false)
+    assert(is(map1, map2) === true)
+    ```
+    
+- **isCollection()**:判断immutable对象的是否是Collection类型
+    例子
+    ```javascript
+    import {  Iterable, List, Map } from 'immutable';
+    const { isCollection, Map, List, Stack } = require('immutable');
+    Iterable.isCollection([]); // false
+    Iterable.isCollection({}); // false
+    Iterable.isCollection(Map()); // true
+    Iterable.isCollection(List()); // true
+    ```
+
  - **List.isList()**:判断一个对象是否是immutable 类型的List
  
   例子
