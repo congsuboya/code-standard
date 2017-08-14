@@ -1,4 +1,4 @@
-## <a name="types">类型</a>
+## <a name="types">常用对象</a>
 
   - **List**: 对应于js中的列表，数组。
   
