@@ -67,15 +67,28 @@
     assert(is(map1, map2) === true)
     ```
     
-- **isIndexed()()**:判断immutable对象的是否是List类型
+- **isIndexed()**:判断immutable对象的是否是List类型
     例子
     ```javascript
-    import {  Iterable, List, Map } from 'immutable';
-    Iterable.isCollection([]); // false
-    Iterable.isCollection({}); // false
-    Iterable.isCollection(Map()); // true
-    Iterable.isCollection(List()); // true
+    import {  Iterable, List, Map, Set } from 'immutable';
+    Iterable.isIndexed([]); // false
+    Iterable.isIndexed({}); // false
+    Iterable.isIndexed(Map()); // false
+    Iterable.isIndexed(List()); // true
+    Iterable.isIndexed(Set()); // false
     ```
+    
+- **isKeyed()**:判断immutable对象的是否是Map类型
+    例子
+    ```javascript
+    import {  Iterable, List, Map, Set } from 'immutable';
+    Iterable.isKeyed()([]); // false
+    Iterable.isKeyed()({}); // false
+    Iterable.isKeyed()(Map()); // true
+    Iterable.isKeyed()(List()); // false
+    ```
+
+
 
  - **List.isList()**:判断一个对象是否是immutable 类型的List
  
