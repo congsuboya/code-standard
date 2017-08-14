@@ -48,7 +48,7 @@
     Iterable.isKeyed(config) //false
     Iterable.isKeyed(immutableOb) //true
     Iterable.isKeyed(immutableOb.get('courser')) //false
-    Iterable.isCollection(immutableOb.get('courser')) //true   
+    Iterable.isIndexed()(immutableOb.get('courser')) //true   
     
     ```
     
@@ -69,7 +69,6 @@
     例子
     ```javascript
     import {  Iterable, List, Map } from 'immutable';
-    const { isCollection, Map, List, Stack } = require('immutable');
     Iterable.isCollection([]); // false
     Iterable.isCollection({}); // false
     Iterable.isCollection(Map()); // true
