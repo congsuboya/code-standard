@@ -94,7 +94,7 @@
   ```javascript
   import { List }  from ('immutable');
   const list = List([ 0, 1, 2, List([ 3, 4 ])])
-  list.setIn([3, 0], 999);
+  list.updateIn([3, 0],v => 999);
   // List [ 0, 1, 2, List [ 999, 4 ] ]
   ```
 
