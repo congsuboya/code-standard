@@ -96,4 +96,29 @@ render(){
     
     ```
 
+- 因为现阶段列表不支持immutable类型的数据列表，传入原生层面时也是无法解析的。所以在这两个地方用到时需要用到toJS()方法。
+
+```javascript
+    render(){
+        let data = this.props.state.getIn(['instances',this.props.componentID,'data']);
+        
+        return(
+            <FlatList
+                ...
+                data ={data.toJS()}
+                ...
+            />)
+    }
+    
+    
+    import { NativeModules }  from 'react-native';
+    const XSYCustomEntityModule = NativeModules.XSYCustomEntityModule;
+    
+    toNativePage(){
+        let data = this.props.state.getIn(['instances',this.props.componentID,'data']);
+        XSYCustomEntityModule.pushWithData(data.toJS())
+        
+    }
+```
+
 
