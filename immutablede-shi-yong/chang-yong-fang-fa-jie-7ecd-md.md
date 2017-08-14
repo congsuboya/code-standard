@@ -45,8 +45,10 @@
     let immutableOb = fromJS(config);
     
     Iterable.isImmutable(immutableOb) //true
+    
     Iterable.isKeyed(config) //false
     Iterable.isKeyed(immutableOb) //true
+    
     Iterable.isKeyed(immutableOb.get('courser')) //false
     Iterable.isIndexed()(immutableOb.get('courser')) //true   
     
@@ -65,7 +67,7 @@
     assert(is(map1, map2) === true)
     ```
     
-- **isCollection()**:判断immutable对象的是否是Collection类型
+- **isIndexed()()**:判断immutable对象的是否是List类型
     例子
     ```javascript
     import {  Iterable, List, Map } from 'immutable';
