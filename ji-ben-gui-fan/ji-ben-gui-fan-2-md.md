@@ -454,5 +454,5 @@
     ```
 
 
-*[Top](#types)*
+*[Top](#comparison-operators--equality)*
 *[返回上级](../ji-ben-gui-fan.md)*  
