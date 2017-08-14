@@ -8,4 +8,8 @@
     * [类型转换.md](ji-ben-gui-fan/ji-ben-gui-fan-3-md.md)
     * [命名规则.md](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
     * [资料参考.md](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
+  * [app整体结构.md](appzheng-ti-jie-gou.md)
+  * [immutable的使用.md](immutablede-shi-yong.md)
+  * [module开发流程.md](modulekai-fa-liu-7a0b-md.md)
+  * [Jest 单元测试.md](jest-dan-yuan-ce-8bd5-md.md)
 
