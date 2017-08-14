@@ -1,4 +1,4 @@
-## <a name="types">包裹State</a>
+## <a name="state">包裹State</a>
 
  - 模块的state要保证是immutable类型的。调用fromJS();
     
@@ -121,3 +121,5 @@ render(){
 ```
 
 
+*[Top](#state)*
+*[返回上级](../immutablede-shi-yong.md)*  
