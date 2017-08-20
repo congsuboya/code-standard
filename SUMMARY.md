@@ -11,7 +11,7 @@
   * [app整体结构.md](appzheng-ti-jie-gou.md)
     * [整体结构.md](appzheng-ti-jie-gou/zheng-ti-jie-6784-md.md)
     * [数据结构介绍.md](appzheng-ti-jie-gou/shu-ju-jie-gou-jie-7ecd-md.md)
-    * initDataModule模块.md
+    * [initDataModule模块.md](appzheng-ti-jie-gou/initdatamodulemo-5757-md.md)
   * [immutable的使用.md](immutablede-shi-yong.md)
     * [常用介绍.md](immutablede-shi-yong/chang-yong-fang-fa-jie-7ecd-md.md)
     * [项目中的使用.md](immutablede-shi-yong/xiang-mu-zhong-de-shi-7528-md.md)
