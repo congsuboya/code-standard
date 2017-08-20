@@ -9,6 +9,9 @@
     * [命名规则.md](ji-ben-gui-fan/ji-ben-gui-fan-4-md.md)
     * [资料参考.md](ji-ben-gui-fan/ji-ben-gui-fan-6-md.md)
   * [app整体结构.md](appzheng-ti-jie-gou.md)
+    * [整体结构.md](appzheng-ti-jie-gou/zheng-ti-jie-6784-md.md)
+    * 数据结构介绍.md
+    * initDataModule模块.md
   * [immutable的使用.md](immutablede-shi-yong.md)
     * [常用介绍.md](immutablede-shi-yong/chang-yong-fang-fa-jie-7ecd-md.md)
     * [项目中的使用.md](immutablede-shi-yong/xiang-mu-zhong-de-shi-7528-md.md)
