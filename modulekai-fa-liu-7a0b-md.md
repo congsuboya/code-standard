@@ -6,7 +6,7 @@
   1. [actions文件夹](modulekai-fa-liu-7a0b-md/actionswen-jian-5939-md.md)
   1. [components文件夹](modulekai-fa-liu-7a0b-md/componentswen-jian-5939-md.md)
   1. [container文件夹](modulekai-fa-liu-7a0b-md/applei-shuo-660e-md.md)
-  1. [reducers文件夹](ji-ben-gui-fan/bian-liang-sheng-ming.md)
+  1. [reducers文件夹](modulekai-fa-liu-7a0b-md/reducerswen-jian-5939-md.md)
 
 
 
